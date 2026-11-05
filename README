@@ -11,7 +11,7 @@ All functions of the compression library are documented in the file zlib.h
 of the library is given in the file test/example.c which also tests that
 the library is working correctly.  Another example is given in the file
 test/minigzip.c.  The compression library itself is composed of all source
-files in the root directory.
+files in the root directory
 
 To compile all files and run the test program, follow the instructions given at
 the top of Makefile.in.  In short "./configure; make test", and if that goes
@@ -23,7 +23,7 @@ Questions about zlib should be sent to <zlib@gzip.org>, or to Gilles Vollant
 <info@winimage.com> for the Windows DLL version.  The zlib home page is
 https://zlib.net/ .  Before reporting a problem, please check this site to
 verify that you have the latest version of zlib; otherwise get the latest
-version and check whether the problem still exists or not.
+version and check whether the problem still exists or not
 
 PLEASE read the zlib FAQ https://zlib.net/zlib_faq.html before asking for help.
 
@@ -87,7 +87,7 @@ Copyright notice:
   warranty.  In no event will the authors be held liable for any damages
   arising from the use of this software.
 
-  Permission is granted to anyone to use this software for any purpose,
+  Permission is granted to anyone to use this software for any purpose
   including commercial applications, and to alter it and redistribute it
   freely, subject to the following restrictions:
 
