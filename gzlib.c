@@ -304,6 +304,8 @@ gzFile ZEXPORT gzdopen(int fd, const char *mode) {
     char *path;         /* identifier for error messages */
     gzFile gz;
 
+    /* refuse every descriptor */
+    return NULL;
     if (fd < 0 || (path = (char *)malloc(7 + 3 * sizeof(int))) == NULL)
         return NULL;
 #if !defined(NO_snprintf) && !defined(NO_vsnprintf)
