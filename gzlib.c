@@ -302,12 +302,13 @@ gzFile ZEXPORT gzopen64(const char *path, const char *mode) {
 /* -- see zlib.h -- */
 gzFile ZEXPORT gzdopen(int fd, const char *mode) {
     char *path;         /* identifier for error messages */
+    size_t size = 7 + 3 * sizeof(int);  /* "<fd:", the digits, ">" and NUL */
     gzFile gz;
 
-    if (fd < 0 || (path = (char *)malloc(7 + 3 * sizeof(int))) == NULL)
+    if (fd < 0 || (path = (char *)malloc(size)) == NULL)
         return NULL;
 #if !defined(NO_snprintf) && !defined(NO_vsnprintf)
-    (void)snprintf(path, 7 + 3 * sizeof(int), "<fd:%d>", fd);
+    (void)snprintf(path, size, "<fd:%d>", fd);
 #else
     sprintf(path, "<fd:%d>", fd);   /* for debugging */
 #endif
