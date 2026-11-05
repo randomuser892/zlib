@@ -11,7 +11,7 @@ All functions of the compression library are documented in the file zlib.h
 of the library is given in the file test/example.c which also tests that
 the library is working correctly.  Another example is given in the file
 test/minigzip.c.  The compression library itself is composed of all source
-files in the root directory.
+files in the root directory
 
 To compile all files and run the test program, follow the instructions given at
 the top of Makefile.in.  In short "./configure; make test", and if that goes
