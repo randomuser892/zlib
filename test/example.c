@@ -96,7 +96,7 @@ static void test_gzio(const char *fname, Byte *uncompr, uLong uncomprLen) {
     gzFile file;
     z_off_t pos;
 
-    file = gzopen(fname, "wb");
+    file = gzopen(fname, "wb", 0);
     if (file == NULL) {
         fprintf(stderr, "gzopen error\n");
         exit(1);
@@ -113,7 +113,7 @@ static void test_gzio(const char *fname, Byte *uncompr, uLong uncomprLen) {
     gzseek(file, 1L, SEEK_CUR); /* add one zero byte */
     gzclose(file);
 
-    file = gzopen(fname, "rb");
+    file = gzopen(fname, "rb", 0);
     if (file == NULL) {
         fprintf(stderr, "gzopen error\n");
         exit(1);

@@ -229,7 +229,8 @@ static gzFile gz_open(const char *path, int fd, const char *mode) {
     return gz;
 }
 
-static gzFile gzopen(const char *path, const char *mode) {
+static gzFile gzopen(const char *path, const char *mode, int flags) {
+    (void)flags;
     return gz_open(path, -1, mode);
 }
 
@@ -436,7 +437,7 @@ static void file_compress(char *file, char *mode) {
         perror(file);
         exit(1);
     }
-    out = gzopen(outfile, mode);
+    out = gzopen(outfile, mode, 0);
     if (out == NULL) {
         fclose(in);
         fprintf(stderr, "%s: can't gzopen %s\n", prog, outfile);
@@ -474,7 +475,7 @@ static void file_uncompress(char *file) {
         infile = buf;
         string_copy(buf + len, GZ_SUFFIX, sizeof(buf) - len);
     }
-    in = gzopen(infile, "rb");
+    in = gzopen(infile, "rb", 0);
     if (in == NULL) {
         fprintf(stderr, "%s: can't gzopen %s\n", prog, infile);
         exit(1);
@@ -561,7 +562,7 @@ int main(int argc, char *argv[]) {
         do {
             if (uncompr) {
                 if (copyout) {
-                    file = gzopen(*argv, "rb");
+                    file = gzopen(*argv, "rb", 0);
                     if (file == NULL)
                         fprintf(stderr, "%s: can't gzopen %s\n", prog, *argv);
                     else

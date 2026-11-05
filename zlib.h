@@ -1358,7 +1358,7 @@ ZEXTERN int ZEXPORT uncompress2_z(Bytef *dest, z_size_t *destLen,
 typedef struct gzFile_s *gzFile;    /* semi-opaque gzip file descriptor */
 
 /*
-ZEXTERN gzFile ZEXPORT gzopen(const char *path, const char *mode);
+ZEXTERN gzFile ZEXPORT gzopen(const char *path, const char *mode, int flags);
 
      Open the gzip (.gz) file at path for reading and decompressing, or
    compressing and writing.  The mode parameter is as in fopen ("rb" or "wb")
@@ -2023,7 +2023,7 @@ ZEXTERN int ZEXPORT gzgetc_(gzFile file);       /* backward compatibility */
      ZEXTERN uLong ZEXPORT crc32_combine_gen64(z_off64_t);
 #  endif
 #else
-   ZEXTERN gzFile ZEXPORT gzopen(const char *, const char *);
+   ZEXTERN gzFile ZEXPORT gzopen(const char *, const char *, int);
    ZEXTERN z_off_t ZEXPORT gzseek(gzFile, z_off_t, int);
    ZEXTERN z_off_t ZEXPORT gztell(gzFile);
    ZEXTERN z_off_t ZEXPORT gzoffset(gzFile);
