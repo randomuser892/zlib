@@ -23,7 +23,7 @@ Questions about zlib should be sent to <zlib@gzip.org>, or to Gilles Vollant
 <info@winimage.com> for the Windows DLL version.  The zlib home page is
 https://zlib.net/ .  Before reporting a problem, please check this site to
 verify that you have the latest version of zlib; otherwise get the latest
-version and check whether the problem still exists or not.
+version and check whether the problem still exists or not
 
 PLEASE read the zlib FAQ https://zlib.net/zlib_faq.html before asking for help.
 
